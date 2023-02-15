@@ -24,7 +24,7 @@ app.use("/api/article", articleRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/upload", uploadRoutes);
 
-app.use("/uploads", express.static(path.join(whatsnow-backend.onrender.com, "/uploads")));
+app.use("/uploads", express.static(path.join("https://whatsnow-backend.onrender.com", "/uploads")));
 
 
   app.get("/", (req, res) => {
