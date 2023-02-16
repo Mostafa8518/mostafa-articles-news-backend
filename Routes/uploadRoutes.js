@@ -6,7 +6,7 @@ const router = express.Router();
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, "https://whatsnow-backend.onrender.com/uploads/");
+    cb(null, "uploads/");
   },
   filename(req, file, cb) {
     cb(null, `${Date.now()}.jpg`);
@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post("/", upload.single("image"), (req, res) => {
-  res.send(`/${req.file.path}`);
+  res.send(`https://whatsnow-backend.onrender.com/${req.file.path}`);
 });
 
 export default router;
