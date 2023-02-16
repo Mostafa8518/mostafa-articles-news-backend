@@ -25,7 +25,8 @@ app.use("/api/user", userRoutes);
 app.use("/api/upload", uploadRoutes);
 
 
-
+const __dirname = path.resolve();
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 
   app.get("/", (req, res) => {
