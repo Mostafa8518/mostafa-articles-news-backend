@@ -107,7 +107,7 @@ const createArticleReview = asyncHandler(async (req, res) => {
 });
 
 const getLatestArticles = asyncHandler(async (req, res) => {
-  const articles = await Article.find().sort({ _id: -1 }).limit(6);
+  const articles = await Article.find().sort({ _id: -1 }).limit(15);
 
   if (articles) {
     res.json(articles);
@@ -118,7 +118,7 @@ const getLatestArticles = asyncHandler(async (req, res) => {
 });
 
 const getTrendingArticles = asyncHandler(async (req, res) => {
-  const articles = await Article.find().sort({ views: -1, _id: -1 }).limit(6);
+  const articles = await Article.find().sort({ views: -1, _id: -1 }).limit(15);
 
   if (articles) {
     res.json(articles);
