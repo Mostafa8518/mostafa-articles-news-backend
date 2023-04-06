@@ -3,11 +3,11 @@ import path from "path";
 import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 import cors from "cors";
-import connectDB from "./config/db.js";
-import articleRoutes from "./Routes/articleRoutes.js";
-import userRoutes from "./Routes/userRoutes.js";
-import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
-import uploadRoutes from "./Routes/uploadRoutes.js";
+import connectDB from "../config/db.js";
+import articleRoutes from "../Routes/articleRoutes.js";
+import userRoutes from "../Routes/userRoutes.js";
+import { notFound, errorHandler } from "../middleware/errorMiddleware.js";
+import uploadRoutes from "../Routes/uploadRoutes.js";
 import serverless from "serverless-http";
 
 
@@ -27,7 +27,7 @@ app.use("/.netlify/functions/api/user", userRoutes);
 app.use("/.netlify/functions/api/upload", uploadRoutes);
 
 
-app.use("/../uploads", express.static(path.join(__dirname, "/../uploads")));
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 
   app.get("/", (req, res) => {
