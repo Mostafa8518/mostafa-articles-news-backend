@@ -9,7 +9,8 @@ import userRoutes from "./Routes/userRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import uploadRoutes from "./Routes/uploadRoutes.js";
 
-
+exports.handler = async function (event, context) {
+  // your server-side functionality
 dotenv.config();
 
 connectDB();
@@ -41,3 +42,4 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
+};
