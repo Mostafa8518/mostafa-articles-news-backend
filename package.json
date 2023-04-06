@@ -2,11 +2,11 @@
   "name": "mostafa",
   "version": "1.0.0",
   "type": "module",
-  "description": "server",
-  "main": "server.js",
+  "description": "api",
+  "main": "api.js",
   "scripts": {
     "start": "./node_modules/.bin/netlify-lambda serve  functions",
-    "server": "nodemon backend/server",
+    "server": "nodemon backend/api",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
