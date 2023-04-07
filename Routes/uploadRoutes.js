@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post("/", upload.single("image"), (req, res) => {
-  res.send(`/${req.file.path}`);
+  res.send(`https://whatsnow-backend.onrender.com/${req.file.path}`);
 });
 
 export default router;
