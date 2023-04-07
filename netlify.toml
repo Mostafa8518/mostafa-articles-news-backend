@@ -1,6 +1,0 @@
-[build]
-functions="functions"
-[dev]
-  command = "npm start" # Command to start your dev server
-  port = 8888 # The port that the netlify dev will be accessible on
- 
