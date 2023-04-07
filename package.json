@@ -5,7 +5,7 @@
   "description": "server",
   "main": "./functins/api.js",
   "scripts": {
-    "start": "./node_modules/.bin/netlify-lambda serve  functions",
+    "start": "node ./functions/api.js",
     "server": "nodemon functions/api",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\""
