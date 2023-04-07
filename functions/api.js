@@ -4,10 +4,10 @@ import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 import cors from "cors";
 
-import articleRoutes from "../Routes/articleRoutes.js";
-import userRoutes from "../Routes/userRoutes.js";
-import { notFound, errorHandler } from "../middleware/errorMiddleware.js";
-import uploadRoutes from "../Routes/uploadRoutes.js";
+import articleRoutes from "./Routes/articleRoutes.js";
+import userRoutes from "./Routes/userRoutes.js";
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+import uploadRoutes from "./Routes/uploadRoutes.js";
 import serverless from "serverless-http";
 import mongoose from "mongoose";
 
@@ -54,6 +54,6 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
 
-const Handler = serverless(app);
+const handler = serverless(app);
 
-export { Handler };
+export { handler };
